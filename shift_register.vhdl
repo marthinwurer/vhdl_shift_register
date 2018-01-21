@@ -35,7 +35,6 @@ begin
 	process (clk, reset)
 	begin
 		if reset = '1' then
-			state <= (others => '0');
 			current_s <= (others => '0');
 
 			-- swap internal states
