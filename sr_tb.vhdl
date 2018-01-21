@@ -17,7 +17,6 @@ architecture behav of sr_tb is
 		clk: in std_logic;
 		input: in std_logic;
 		reset: in std_logic;
-		output: out std_logic;
 		state: out std_logic_vector(N-1 downto 0));
 	end component;
 
@@ -30,7 +29,7 @@ architecture behav of sr_tb is
 begin
 	sr: shift_register 
 	generic map(N=>width) 
-		port map(clk=>clk, input=>input, reset=>reset, output=>output, state=>state);
+		port map(clk=>clk, input=>input, reset=>reset, state=>state);
 
 	process
 	type expected_io is record
