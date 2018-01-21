@@ -16,17 +16,17 @@ architecture gaisler of shift_register is
 begin
 
 	process (input, current_s)
-		variable n: std_logic_vector(N-1 downto 0);
+		variable nn: std_logic_vector(N-1 downto 0);
 	begin
-		n := current_s;
-		n(0) := input;
+		nn := current_s;
+		nn(0) := input;
 		for ii in 1 to N-1 loop
-			n(ii) := current_s(ii-1);
+			nn(ii) := current_s(ii-1);
 		end loop;
 
 		
 		-- update next state from variable
-		next_s <= n;
+		next_s <= nn;
 
 		--  update output with current state
 		state <= current_s;
